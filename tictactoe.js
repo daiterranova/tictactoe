@@ -5,11 +5,6 @@ let turn = "x";
 let itsATie = false;
 let winner;
 let squares = document.getElementsByClassName("cell");
-let resetButton = document.getElementById("reset");
-resetButton.addEventListener("click", function () {
-  resetGame();
-  render();
-});
 let turnElement = document.getElementById("turn");
 let winnerBox = document.getElementById("winner");
 
@@ -91,6 +86,9 @@ let getEmoji = (player) => {
 
 function plays(position) {
   // rellena el casillero con el valor de turno,llamo a la funcion whoWins para chequear si hubo jugada ganadora,cambia el valor de turno y llama a render
+  if (winner != undefined) {
+    return;
+  }
   boardGame[position] = turn;
   whoWins();
   tie();
