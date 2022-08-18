@@ -61,15 +61,15 @@ let render = () => {
   }
 
   if (!winner && itsATie) {
-    winnerBox.textContent = "Empate";
+    winnerBox.textContent = "Tie";
     return;
   }
 
   if (!winner) {
-    turnElement.textContent = `Juega : ${getEmoji(turn)}`;
+    turnElement.textContent = `Turn  ${getEmoji(turn)}`;
     winnerBox.textContent = "";
   } else {
-    winnerBox.textContent = `Ganador:${getEmoji(winner)}`;
+    winnerBox.textContent = `Winner ${getEmoji(winner)}`;
   }
 };
 
@@ -86,7 +86,7 @@ let getEmoji = (player) => {
 
 function plays(position) {
   // rellena el casillero con el valor de turno,llamo a la funcion whoWins para chequear si hubo jugada ganadora,cambia el valor de turno y llama a render
-  if (winner != undefined) {
+  if (winner != undefined || itsATie == true) {
     return;
   }
   boardGame[position] = turn;
