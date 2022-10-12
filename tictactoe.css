@@ -1,5 +1,21 @@
-* {
+:root {
+    /* Colors */
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-black: hsl(0, 0%, 0%);
+    --clr-violet: rgb(138, 43, 226);
+    --clr-gray: #c1c5e2;
+    /* Typography */
+    --fw-regular: 400;
+    --fw-semibold: 600;
+
+  }
+
+body {
     background-color: #e2eafc;
+    font-family: 'Rubik', sans-serif;
+    font-weight: var(--fw-semibold);
+    font-size: 30px;
+    color:var(--clr-violet);
 }
 
 .cell {
@@ -15,19 +31,17 @@ td {
     width: 180px;
     height: 180px;
     text-align: center;
-    font-size: 30px;
 }
 
 #container {
-    position: absolute;
+    /* position: absolute; */
     display: flex;
     flex-direction: column;
     padding-top: 50px;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     height: 89%;
     width: 100%;
-
 }
 
 div.container-info {
@@ -37,30 +51,26 @@ div.container-info {
     width: 50%;
     justify-content: space-between;
     align-items: center;
+    gap:1rem;
 }
 
 .board {
-
     margin: 50px 0 25px 0;
 }
 
 #turn {
-    color: blueviolet;
     text-align: center;
-    padding: 15px 15px;
-    font-size: 1.5rem;
-    font-weight: 600;
-    font-family: 'Rubik', sans-serif;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #c1c5e2;
 }
 
-#winner {
+/* #winner {
     color: blueviolet;
+    background-color: #c1c5e2;
     text-align: center;
-    font-size: 1.5rem;
-    padding: 15px;
-    font-weight: 600;
-    font-family: 'Rubik', sans-serif;
-}
+    padding: 1rem;
+} */
 
 .reset-btn {
     background-color: #c1c5e2;
@@ -69,17 +79,12 @@ div.container-info {
     height: 40px;
     cursor: pointer;
     border: none;
-    border-bottom: 2px #a1a5c8;
-    animation: translation 5s ease-in-out forwards
-}
-@keyframes translation{
-
+    border-bottom: 2px #a1a5c8;   
 }
 
 .reset-btn:hover {
     background-color: rgb(184, 192, 255);
     opacity: 0.6;
-   /*  box-shadow: 0 0 4px #eb50ff4f; */
     box-shadow: 0px 5px 10px rgba(54, 60, 62, 0.5);
 }
 
