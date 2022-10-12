@@ -5,7 +5,7 @@ let turn = "x";
 let itsATie = false;
 let winner;
 let squares = document.getElementsByClassName("cell");
-let turnElement = document.getElementById("turn");
+let turnBox = document.getElementById("turn");
 let winnerBox = document.getElementById("winner");
 
 //<<Funciones>>
@@ -61,15 +61,16 @@ let render = () => {
   }
 
   if (!winner && itsATie) {
-    winnerBox.textContent = "Tie";
+    turnBox.textContent = "It is a Tie";
     return;
   }
 
   if (!winner) {
-    turnElement.textContent = `Turn  ${getEmoji(turn)}`;
-    winnerBox.textContent = "";
+    turnBox.textContent = `Turn  ${getEmoji(turn)}`;
+    /*  winnerBox.textContent = ""; */
   } else {
-    winnerBox.textContent = `Winner ${getEmoji(winner)}`;
+    /* winnerBox.textContent = `Winner ${getEmoji(winner)}`; */
+    turnBox.textContent = `Winner  ${getEmoji(winner)}`;
   }
 };
 
@@ -101,6 +102,7 @@ function plays(position) {
 }
 
 function resetGame() {
+  /* reinicia el juego reasignando valores a ganador,empate y el tablero; el primer turno se asigna a "x" */
   boardGame = new Array(9);
   turn = "x";
   winner = undefined;
